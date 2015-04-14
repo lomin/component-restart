@@ -8,7 +8,7 @@ A simple watcher that reloads components when files change.
 
 Call the watch function with two parameters: the var pointing to the function to restart and the started system.
 
-```
+```clojure
 (require '[me.lomin.component-restart :as restart])
 (defn -main []
   (let [system (component/start (make-system))]
