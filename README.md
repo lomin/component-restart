@@ -5,6 +5,7 @@ Provides a single function that watches for changes in source files in all direc
 ## Leiningen
 
 *component-restart* is available from Clojars.  Add the following dependency to your *project.clj*:
+
 [![Clojars Project](http://clojars.org/me.lomin/component-restart/latest-version.svg)](http://clojars.org/me.lomin/component-restart)
 
 ## Usage ##
