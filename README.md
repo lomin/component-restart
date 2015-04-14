@@ -2,6 +2,8 @@
 
 A simple watcher that reloads components when files change.
 
+[![Clojars Project](http://clojars.org/me.lomin/component-restart/latest-version.svg)](http://clojars.org/me.lomin/component-restart)
+
 ## Usage ##
 
 Call the watch function with two parameters: the var pointing to the function to restart and the started system.
