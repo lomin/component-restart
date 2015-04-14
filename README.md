@@ -1,7 +1,10 @@
 # component-restart
 
-A simple watcher that reloads components when files change.
+Provides a single function that watches for changes in source files in all directories on the classpath. When a change has been detected, it reloads the modifed source files and restarts the component-system.
 
+## Leiningen
+
+*component-restart* is available from Clojars.  Add the following dependency to your *project.clj*:
 [![Clojars Project](http://clojars.org/me.lomin/component-restart/latest-version.svg)](http://clojars.org/me.lomin/component-restart)
 
 ## Usage ##
