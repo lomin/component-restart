@@ -1,5 +1,5 @@
 (ns me.lomin.component-restart
-  (:require [clojure.string :as str]
+  (:require [clojure.string :as string]
             [clojure.tools.logging :as log]
             [clojure.tools.namespace.dir :as dir]
             [clojure.tools.namespace.repl :as repl]
@@ -7,15 +7,15 @@
             [com.stuartsierra.component :as component]))
 
 (defn- to-relative-resource [a-meta]
-  (str/join "." (pop (str/split (:file a-meta) #"\."))))
+  (string/join "." (pop (string/split (:file a-meta) #"\."))))
 
 (defn ns-file-name [a-meta]
   (str "/" (to-relative-resource a-meta)))
 
 (defn ns-symbol [a-meta]
   (-> (to-relative-resource a-meta)
-      (str/replace #"_" "-")
-      (str/replace #"/" ".")
+      (string/replace #"_" "-")
+      (string/replace #"/" ".")
       (symbol)))
 
 (defn load-clojure-file [file-name]
