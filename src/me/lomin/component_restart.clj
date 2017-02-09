@@ -14,9 +14,8 @@
 
 (defn ns-symbol [a-meta]
   (-> (to-relative-resource a-meta)
-      (str/split  #"/")
-      (as-> parts (conj (pop parts) (str/replace (last parts) #"_" "-")))
-      (->> (str/join "."))
+      (str/replace #"_" "-")
+      (str/replace #"/" ".")
       (symbol)))
 
 (defn load-clojure-file [file-name]
