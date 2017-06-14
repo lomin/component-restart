@@ -1,4 +1,4 @@
-(defproject me.lomin/component-restart "0.1.2"
+(defproject me.lomin/component-restart "0.2.0"
             :description "A simple watcher that restarts components when files change."
             :url "https://github.com/lomin/component-restart"
             :license {:name "Eclipse Public License"
