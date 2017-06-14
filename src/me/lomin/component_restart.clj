@@ -3,8 +3,7 @@
             [clojure.tools.logging :as log]
             [clojure.tools.namespace.dir :as dir]
             [clojure.tools.namespace.repl :as repl]
-            [clojure.tools.namespace.track :as track]
-            [com.stuartsierra.component :as component]))
+            [clojure.tools.namespace.track :as track]))
 
 (defn- to-relative-resource [a-meta]
   (string/join "." (pop (string/split (:file a-meta) #"\."))))
@@ -37,13 +36,13 @@
     ((resolve-callback a-meta))))
 
 (defn watch
-  ([callback-var system]
-   (watch callback-var system (dir/scan (track/tracker))))
-  ([callback-var system tracker]
+  ([callback-var event-fn]
+   (watch callback-var event-fn (dir/scan (track/tracker))))
+  ([callback-var event-fn tracker]
   (let [new-tracker (dir/scan tracker)]
     (if (not= new-tracker tracker)
       (do
-        (component/stop system)
+        (event-fn)
         (reload callback-var))
       (do (Thread/sleep 200)
-        (recur callback-var system new-tracker))))))
+        (recur callback-var event-fn new-tracker))))))
